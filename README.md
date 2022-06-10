@@ -1,1 +1,1 @@
-[zatsblog.netlify.app]
+[ZatsBlog](zatsblog.netlify.app)
