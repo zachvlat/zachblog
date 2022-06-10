@@ -1,1 +1,1 @@
-[ZatsBlog](https://www.zatsblog.netlify.app)
+[ZatsBlog](https://zatsblog.netlify.app)
