@@ -21,16 +21,16 @@ function App() {
   return (
     <Router>
       <nav>
-        <Link to='/'> Home </Link>
+        <Link to='/'> Zats Blog (guides and stuff) </Link>
 
-        {!isAuth ? (
+        {/* {!isAuth ? (
           <Link to='/login'> Login </Link>
         ) : (
           <>
             <Link to='/createpost'> Create Post </Link>
             <button onClick={signUserOut}> Log Out</button>
           </>
-        )}
+        )} */}
       </nav>
       <Routes>
         <Route path='/' element={<Home isAuth={isAuth} />} />
