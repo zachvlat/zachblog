@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
 .App {
   text-align: center;
 }
@@ -5,14 +7,15 @@ body {
   padding: 0%;
   margin: 0%;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #370d60;
+  background-color: #373854;
 }
 
 nav {
+  font-family: Tomorrow, sans-serif;
   margin: 0;
   width: 100%;
   height: 80px;
-  background-color: black;
+  background-color: #373854;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -173,7 +176,7 @@ textarea {
   width: 600px;
   height: auto;
   max-height: 1000px;
-  background-color: #400d60;
+  background-color: #493267;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 20px;
   padding: 20px;
@@ -189,7 +192,7 @@ textarea {
 
 .postHeader .title {
   flex: 50%;
-  color: #c8dafc;
+  color: #7bb3ff;
 }
 .postHeader .deletePost {
   flex: 50%;
