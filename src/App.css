@@ -147,7 +147,6 @@ textarea {
 .homePage .post {
   width: 600px;
   height: auto;
-  max-height: 1000px;
   background-color: #493267;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   margin: 20px;
