@@ -24,7 +24,9 @@ function Home() {
                 <h1> {post.title}</h1>
               </div>
             </div>
-            <div className='postTextContainer'> {post.postText} </div>
+            <div
+              className='postTextContainer'
+              dangerouslySetInnerHTML={{ __html: post.postText }}></div>
           </div>
         );
       })}
