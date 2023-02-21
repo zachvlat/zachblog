@@ -3,7 +3,7 @@ import { BrowserRouter as Link } from "react-router-dom";
 
 function Header() {
   return (
-    <nav>
+    <nav className='navTitle'>
       <Link to='/'> ZACH BLOG (guides and stuff)</Link>
     </nav>
   );
