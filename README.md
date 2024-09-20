@@ -1,4 +1,4 @@
-[ZachBlog](https://zachvlatblog.netlify.app)
+[ZachBlog](https://zachv.netlify.app)
 
 ### My blog about guides I found on the internet! Written in React, with Firebase for my database.
 
