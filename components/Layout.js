@@ -21,7 +21,7 @@ export default function Layout({ children, toggleColorMode, mode }) {
 
           <Box component="nav" sx={{ display: "flex", alignItems: "center" }}>
             <Link href="/" style={{ marginRight: "1rem" }}>Home</Link>
-            <Link href="/news" style={{ marginRight: "1rem" }}>News</Link>
+            <Link href="/about" style={{ marginRight: "1rem" }}>About</Link>
 
             <Tooltip title="Toggle light/dark theme">
               <IconButton onClick={toggleColorMode} color="inherit">
