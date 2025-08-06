@@ -1,7 +1,7 @@
 
 import { Container, Typography } from '@mui/material';
 import Head from 'next/head';
-import { getAllPosts, getPostBySlug } from '../../lib/getBlog';
+import { getAllPosts, getPostBySlug } from '../../lib/getNews';
 import ReactMarkdown from 'react-markdown';
 
 export default function Post({ post }) {
@@ -33,6 +33,5 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
     const post = getPostBySlug(params.slug);
-    const posts = getAllPosts();
-    return { props: { post, posts } };
+    return { props: { post } };
   }

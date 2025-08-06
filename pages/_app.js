@@ -5,14 +5,9 @@ import { useMemo, useState } from "react";
 
 export default function App({ Component, pageProps }) {
   const [mode, setMode] = useState("dark");
-  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const toggleColorMode = () => {
     setMode(prev => (prev === "light" ? "dark" : "light"));
-  };
-
-  const handleDrawerToggle = () => {
-    setDrawerOpen(!drawerOpen);
   };
 
   const theme = useMemo(() => createTheme({
@@ -35,8 +30,8 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-        <Layout toggleColorMode={toggleColorMode} mode={mode} handleDrawerToggle={handleDrawerToggle} posts={pageProps.posts}>
-          <Component {...pageProps} drawerOpen={drawerOpen} handleDrawerToggle={handleDrawerToggle} />
+        <Layout toggleColorMode={toggleColorMode} mode={mode}>
+          <Component {...pageProps} />
         </Layout>
       </div>
     </ThemeProvider>
