@@ -21,7 +21,7 @@ export default function Home({ posts }) {
         sx={{ mb: '2rem', '& .MuiOutlinedInput-root': { borderRadius: '22px' } }}
       />
       <Typography variant="h3" gutterBottom>
-        Latest News
+        Latest Blogs
       </Typography>
       <Grid container spacing={4}>
         {filteredPosts.map((post) => (

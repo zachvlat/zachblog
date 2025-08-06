@@ -1,4 +1,5 @@
 import { Container, Typography, Box, Link } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default function About() {
   return (
@@ -13,7 +14,7 @@ export default function About() {
       >
         <Typography variant="h4">
           <Link href="https://github.com/zachvlat" target="_blank" rel="noopener noreferrer">
-            My Repos
+            <GitHubIcon />
           </Link>
         </Typography>
       </Box>
