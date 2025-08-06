@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -20,6 +21,8 @@ import ArticleList from "./ArticleList";
 export default function Layout({ children, toggleColorMode, mode, handleDrawerToggle, posts, drawerOpen }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const router = useRouter();
+  const isArticlePage = router.pathname.startsWith('/blog/') && router.pathname !== '/blog';
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredPosts = posts ? posts.filter((post) =>
@@ -44,17 +47,7 @@ export default function Layout({ children, toggleColorMode, mode, handleDrawerTo
     <>
       <AppBar position="static" color="primary">
         <Toolbar>
-          {isMobile && (
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2 }}
-            >
-              <Menu />
-            </IconButton>
-          )}
+          
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
             <Link href="/">Zach Blog</Link>
           </Typography>
@@ -77,22 +70,13 @@ export default function Layout({ children, toggleColorMode, mode, handleDrawerTo
       </AppBar>
 
       <Box component="main" sx={{ flexGrow: 1, display: 'flex' }}>
-        {isMobile ? (
-          <Drawer
-            variant="temporary"
-            open={drawerOpen}
-            onClose={handleDrawerToggle}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {sidebarContent}
-          </Drawer>
-        ) : (
-          <Box sx={{ width: '21%', flexShrink: 0 }}>
-            {sidebarContent}
-          </Box>
-        )}
+        <Box sx={{
+          width: isMobile ? '87%' : '21%',
+          flexShrink: 0,
+          display: isArticlePage ? 'none' : 'block',
+        }}>
+          {sidebarContent}
+        </Box>
         <Container sx={{ mt: 4, mb: 4, flexGrow: 1 }} maxWidth={false}>
           {children}
         </Container>
