@@ -25,7 +25,8 @@ function getCountryFlag(countryName) {
         "Uruguay": "UY",
         "Argentina": "AR",
         "Algeria": "DZ",
-        "Sweden": "SE"
+        "Sweden": "SE",
+        "Portugal": "PT"
     };
 
     const code = countryCodes[countryName];
@@ -53,13 +54,22 @@ rows.forEach(row => {
     const contractStarted = row.querySelector('td:nth-child(7)')?.textContent.trim() || null;
     const contractEnds = row.querySelector('td:nth-child(9)')?.textContent.trim() || null;
 
-    // Extract age correctly from inside parentheses
+    // Extract age from parentheses
     const ageText = row.querySelector('td:nth-child(3)')?.textContent || '';
     const ageMatch = ageText.match(/\((\d+)\)/);
     const age = ageMatch ? ageMatch[1] : null;
 
     const value = row.querySelector('td.rechts.hauptlink a')?.textContent.trim() || null;
-    const imageUrl = row.querySelector('td.posrela > table > tbody > tr:nth-child(1) > td:nth-child(1) > img')?.src || null;
+
+    // Get image URL with lazy-load support
+    const imgElement = row.querySelector('td.posrela > table > tbody > tr:nth-child(1) > td:nth-child(1) > img');
+    let imageUrl = null;
+    if (imgElement) {
+        imageUrl = imgElement.getAttribute('data-src') || imgElement.getAttribute('src');
+        if (imageUrl && imageUrl.startsWith('data:image/gif')) {
+            imageUrl = null; // Ignore placeholders
+        }
+    }
 
     players.push({
         number,
