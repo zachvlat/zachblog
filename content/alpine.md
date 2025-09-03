@@ -5,8 +5,7 @@ slug: "alpine"
 ---
 
 ## If you want all
-`apk add nano git curl wget openssh build-base bash flatpak streamlink lazydocker docker docker-cli docker-compose python3 py3-pip nodejs npm shadow go openjdk21 py3-virt
-ualenv yt-dlp btop newsboat yazi mpv ffmpeg lscpu`
+`apk add nano git curl wget openssh build-base bash flatpak streamlink lazydocker docker docker-cli docker-compose python3 py3-pip nodejs npm shadow go openjdk21 yt-dlp btop newsboat yazi mpv ffmpeg lscpu`
 
 ## General
 `apk add nano git curl wget openssh build-base bash`
