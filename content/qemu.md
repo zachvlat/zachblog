@@ -24,6 +24,7 @@ qemu-system-x86_64 -accel hax -m 4G -boot d -cdrom "C:\Users\Zaxos\Downloads\iso
 qemu-system-x86_64 -accel hax -m 4G -hda "C:\Users\Zaxos\zatsvm.img" -smp cores=2 -net nic -net user
 
 # WHPX acceleration
-qemu-system-x86_64 -accel whpx -m 4G -boot d -cdrom "C:\Users\zaxos\iso.iso" -hda "C:\Users\zaxos\iso.img" -smp cores=2 -net nic -net user
-qemu-system-x86_64 -accel whpx -m 4G -hda "C:\Users\zaxos\popos\popos.img" -smp cores=2 -net nic -net user
+qemu-img create -f qcow2 popos.img 40G
+qemu-system-x86_64 -accel whpx -m 4G -boot d -cdrom "C:\Users\zaxos\popos.iso" -hda "C:\Users\zaxos\popos.img" -smp cores=2 -net nic -net user
+qemu-system-x86_64 -accel whpx -m 4G -hda "C:\Users\zaxos\popos.img" -smp cores=2 -net nic -net user
 ```
