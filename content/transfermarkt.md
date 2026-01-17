@@ -24,9 +24,11 @@ function getCountryFlag(countryName) {
         "Slovenia": "SI",
         "Uruguay": "UY",
         "Argentina": "AR",
+        "Nigeria": "NG",
         "Algeria": "DZ",
         "Sweden": "SE",
-        "Portugal": "PT"
+        "Portugal": "PT",
+        "Italy": "IT"
     };
 
     const code = countryCodes[countryName];
