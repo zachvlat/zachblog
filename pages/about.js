@@ -1,7 +1,8 @@
 import { Container, Typography, Box, Link } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { getAllPosts } from '../lib/getNews';
 
-export default function About() {
+export default function About({ posts }) {
   return (
     <Container>
       <Box
@@ -20,4 +21,9 @@ export default function About() {
       </Box>
     </Container>
   );
+}
+
+export async function getStaticProps() {
+  const posts = getAllPosts();
+  return { props: { posts } };
 }

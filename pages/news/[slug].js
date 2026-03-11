@@ -32,6 +32,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+    const posts = getAllPosts();
     const post = getPostBySlug(params.slug);
-    return { props: { post } };
+    return { props: { post, posts } };
   }

@@ -1,27 +1,16 @@
-import { Container, Typography, Grid, TextField } from '@mui/material';
-import { useState } from 'react';
+import { Container, Typography, Grid } from '@mui/material';
 import NewsCard from '../components/NewsCard';
 import { getAllPosts } from '../lib/getNews';
 
-export default function Home({ posts }) {
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const filteredPosts = posts.filter((post) =>
-    post.title.toLowerCase().includes(searchQuery.toLowerCase())
+export default function Home({ posts: pagePosts, searchQuery }) {
+  const filteredPosts = (pagePosts || []).filter((post) =>
+    post.title.toLowerCase().includes((searchQuery || '').toLowerCase())
   );
 
   return (
     <Container>
-      <TextField
-        label="Search"
-        variant="outlined"
-        fullWidth
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        sx={{ mb: '2rem', '& .MuiOutlinedInput-root': { borderRadius: '22px' } }}
-      />
       <Typography variant="h3" gutterBottom>
-        Latest Blogs
+        Homepage
       </Typography>
       <Grid container spacing={4}>
         {filteredPosts.map((post) => (
