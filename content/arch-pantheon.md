@@ -1,5 +1,5 @@
 ---
-title: "Arch Pantheon"
+title: "Arch Pantheon Setup"
 date: "2022-06-19"
 slug: "arch-pantheon"
 ---

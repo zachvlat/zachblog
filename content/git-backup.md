@@ -1,5 +1,5 @@
 ---
-title: "Github to Gitea"
+title: "Github to Gitea script"
 date: "2025-06-24"
 slug: "git-backup"
 ---
@@ -7,13 +7,13 @@ slug: "git-backup"
 ```shell
 #!/bin/bash
 
-GITHUB_USERNAME=zachvlat
+GITHUB_USERNAME=GITHUBUSERNAME
 GITHUB_TOKEN=MYGITHUBTOKEN
 
-GITEA_USERNAME=zatsando
+GITEA_USERNAME=GITEAUSERNAME
 GITEA_TOKEN=MYGITEATOKEN
 GITEA_DOMAIN=git.zatspi.duckdns.org
-GITEA_REPO_OWNER=zatsando
+GITEA_REPO_OWNER=GITEAUSERNAME
 
 # === GET YOUR GITHUB PERSONAL REPOS ===
 GET_REPOS=$(curl -s -u "$GITHUB_USERNAME:$GITHUB_TOKEN" \

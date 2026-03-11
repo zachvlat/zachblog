@@ -1,5 +1,5 @@
 ---
-title: "Brave Backup"
+title: "Brave Backup python script"
 date: "2025-06-26"
 slug: "brave-backup"
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Alpine"
+title: "Alpine Server"
 date: "2025-06-19"
 slug: "alpine"
 ---

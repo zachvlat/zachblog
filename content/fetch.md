@@ -1,5 +1,5 @@
 ---
-title: "Fetch"
+title: "My Fetch script"
 date: "2025-07-13"
 slug: "fetch"
 ---

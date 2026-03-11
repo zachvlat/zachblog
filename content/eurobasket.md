@@ -1,5 +1,5 @@
 ---
-title: "Eurobasket.com Scrape"
+title: "Eurobasket.com Roster Scrape"
 date: "2025-06-19"
 slug: "eurobasket"
 ---

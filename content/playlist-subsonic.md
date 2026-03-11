@@ -1,5 +1,5 @@
 ---
-title: "Playlist Generator"
+title: "M3U Playlist Generator"
 date: "2025-07-24"
 slug: "playlist-subsonic"
 ---
@@ -8,7 +8,7 @@ slug: "playlist-subsonic"
 #!/bin/bash
 
 # Base directory
-BASE_DIR="/mnt/zaxdrive/Zatsando/Music"
+BASE_DIR="/YOURMUSICPATH"
 
 # Audio file extensions (case-insensitive)
 EXTENSIONS="mp3|flac|wav|aac|ogg|m4a"
