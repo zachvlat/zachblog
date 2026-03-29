@@ -1,8 +1,10 @@
 ---
-title: "My Fetch script"
+title: "My Fetch Script"
 date: "2025-07-13"
 slug: "fetch"
 ---
+
+Custom system info fetch script (like neofetch) with ASCII art.
 
 ```bash
 

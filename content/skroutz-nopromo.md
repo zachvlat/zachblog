@@ -4,6 +4,8 @@ date: "2025-06-19"
 slug: "skroutz-nopromo"
 ---
 
+JavaScript snippet to hide promotional content on Skroutz.gr.
+
 ```javascript
 function addGlobalStyle(css) {
     var styleSheet = document.createElement('style');

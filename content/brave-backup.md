@@ -1,8 +1,10 @@
 ---
-title: "Brave Backup python script"
+title: "Brave Backup Python Script"
 date: "2025-06-26"
 slug: "brave-backup"
 ---
+
+This Python script allows you to backup your Chromium/Brave browser profiles from Windows, Linux (Flatpak), or WSL.
 
 ```python
 import os

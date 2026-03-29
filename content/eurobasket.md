@@ -4,6 +4,8 @@ date: "2025-06-19"
 slug: "eurobasket"
 ---
 
+JavaScript snippet to scrape basketball team rosters from Eurobasket.com with flag emojis.
+
 ```javascript
 // Function to get flag emoji from country code
 function getFlagEmoji(countryCode) {

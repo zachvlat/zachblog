@@ -1,8 +1,10 @@
 ---
-title: "Scrape Electric bills"
+title: "Scrape Electric Bills"
 date: "2025-06-19"
 slug: "scrape-electric-bills"
 ---
+
+Python script to scrape electricity provider prices from InsuranceMarket.gr.
 
 ```python
 import requests

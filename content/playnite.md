@@ -1,8 +1,10 @@
 ---
-title: "Playnite"
+title: "Playnite Scripts"
 date: "2025-06-19"
 slug: "playnite"
 ---
+
+PowerShell scripts for Playnite game library manager.
 
 ```powershell
 #champR open

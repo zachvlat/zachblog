@@ -1,8 +1,10 @@
 ---
-title: "React Native with bottom"
+title: "React Native with Bottom Tabs"
 date: "2025-06-19"
 slug: "react-native-with-bottom"
 ---
+
+Bootstrap script to create an Expo React Native app with React Navigation Bottom Tabs and Material 3 theming (light/dark mode).
 
 ```bash
 #!/bin/bash

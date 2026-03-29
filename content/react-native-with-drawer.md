@@ -1,8 +1,10 @@
 ---
-title: "React Native with drawer"
+title: "React Native with Drawer"
 date: "2025-06-19"
 slug: "react-native-with-drawer"
 ---
+
+Bootstrap script to create an Expo React Native app with React Navigation Drawer and Material 3 theming.
 
 ```bash
 #!/bin/bash

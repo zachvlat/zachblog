@@ -9,12 +9,29 @@ This project, titled "Zachvlat Server," is an ambitious undertaking that aims to
 ## Getting Started
 To get started with this project, you need to follow a few simple steps:
 
-1. Clone the repository by running the following command: `git clone https://github.com/zachvlat/server.git`  
-2. Navigate to the project directory: `cd server`  
-3. Create a directory structure for Docker data: `mkdir -p nginx/data nginx/letsencrypt nextcloud/appdata nextcloud/data hass/config jellyfin/config jellyfin/tvshows jellyfin/movies jellyfin/music transmission deemix filebrowser`  
-4. Edit the Docker Compose configuration file (docker-compose.yml) to customize your services.
-5. Start the services: `docker-compose up -d`  
-6. Following these steps, you'll have a fully functional server setup with the configured services.  
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/zachvlat/server.git
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd server
+   ```
+
+3. Create a directory structure for Docker data:
+   ```bash
+   mkdir -p nginx/data nginx/letsencrypt nextcloud/appdata nextcloud/data hass/config jellyfin/config jellyfin/tvshows jellyfin/movies jellyfin/music transmission deemix filebrowser
+   ```
+
+4. Edit the Docker Compose configuration file (`docker-compose.yml`) to customize your services.
+
+5. Start the services:
+   ```bash
+   docker-compose up -d
+   ```
+
+Following these steps, you'll have a fully functional server setup with the configured services.  
 
 ## Services
 The project includes several services:

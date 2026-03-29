@@ -4,7 +4,9 @@ date: "2025-07-24"
 slug: "playlist-subsonic"
 ---
 
-```shell
+This script generates M3U playlists for each subdirectory in your music folder, useful for Subsonic-compatible music servers.
+
+```bash
 #!/bin/bash
 
 # Base directory

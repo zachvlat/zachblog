@@ -4,6 +4,8 @@ date: "2025-06-19"
 slug: "game-drive-mount"
 ---
 
+Bash script to automatically mount a game drive by label and add it to fstab for auto-mounting on boot.
+
 ```bash
 #!/bin/bash
 

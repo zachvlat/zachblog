@@ -1,10 +1,12 @@
 ---
-title: "Github to Gitea script"
+title: "GitHub to Gitea Migration Script"
 date: "2025-06-24"
 slug: "git-backup"
 ---
 
-```shell
+This script migrates all your GitHub repositories to a Gitea instance.
+
+```bash
 #!/bin/bash
 
 GITHUB_USERNAME=GITHUBUSERNAME
