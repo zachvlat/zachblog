@@ -11,3 +11,6 @@ bash <(curl -s https://gist.githubusercontent.com/zachvlat/73969463775770cb2c3e5
 ```bash
 sudo pacman -Syu;flatpak update -y;flatpak remove --delete-data --unused -y;sudo pacman -Scc;sudo pacman -Rns $(pacman -Qtdq);
 ```
+```bash
+printf '[Wallet]\nEnabled=false\n' > ~/.config/kwalletrc
+```
