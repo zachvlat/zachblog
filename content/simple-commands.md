@@ -17,3 +17,7 @@ printf '[Wallet]\nEnabled=false\n' > ~/.config/kwalletrc
 ```bash
 sudo tailscale up --advertise-exit-node --advertise-routes=192.168.10.0/24
 ```
+```bash
+alias check-updates='docker run --rm -e DOCKER_API_VERSION=1.54 -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --run-once --monitor-only --no-startup-message';
+check-updates;
+```
