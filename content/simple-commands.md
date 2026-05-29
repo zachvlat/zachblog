@@ -14,3 +14,6 @@ sudo pacman -Syu;flatpak update -y;flatpak remove --delete-data --unused -y;sudo
 ```bash
 printf '[Wallet]\nEnabled=false\n' > ~/.config/kwalletrc
 ```
+```bash
+sudo tailscale up --advertise-exit-node --advertise-routes=192.168.10.0/24
+```
