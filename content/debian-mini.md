@@ -12,7 +12,9 @@ Debian is a robust and versatile operating system, but its default setup isn't o
 
 ### 🗑️ Removing Unnecessary Packages
 ```bash
-sudo apt remove --purge imagemagick* firefox-esr libreoffice* akregator dragonplayer gimp gwenview juk kcalc kmail* kmouth okular konqueror sweeper kwrite kontrast kate kdepim-themeeditors xterm pim* dolphin konsole discover ark plasma-welcome khelpcenter kinfocenter partitionmanager kmag kmousetool kfind plasma-systemmonitor kwalletmana* plasma-discover -y
+sudo apt remove --purge imagemagick* firefox-esr libreoffice* akregator dragonplayer gimp gwenview juk kcalc kmail* kmouth okular konqueror sweeper kwrite kontrast kate kdepim-themeeditors xterm pim* dolphin konsole discover ark plasma-welcome khelpcenter kinfocenter partitionmanager kmag kmousetool kfind plasma-systemmonitor kwalletmana* plasma-discover -y;
+sudo rm /usr/bin/spectacle;
+sudo apt autoremove -y;
 ```
 
 ### 🏗️ Flatpak Setup
