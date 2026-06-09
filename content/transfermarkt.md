@@ -5,71 +5,93 @@ slug: "transfermarkt"
 ---
 
 ```javascript
-function getCountryFlag(countryName) {
-    const countryCodes = {
-        "Poland": "PL",
-        "Russia": "RU",
-        "Albania": "AL",
-        "Greece": "GR",
-        "Iceland": "IS",
-        "Croatia": "HR",
-        "Netherlands": "NL",
-        "United States": "US",
-        "Germany": "DE",
-        "Serbia": "RS",
-        "Brazil": "BR",
-        "Spain": "ES",
-        "France": "FR",
-        "Morocco": "MA",
-        "Slovenia": "SI",
-        "Uruguay": "UY",
-        "Argentina": "AR",
-        "Nigeria": "NG",
-        "Algeria": "DZ",
-        "Sweden": "SE",
-        "Portugal": "PT",
-        "Italy": "IT"
-    };
-
-    const code = countryCodes[countryName];
-    const flag = code ? [...code].map(c => String.fromCodePoint(0x1F1E6 + c.charCodeAt(0) - 65)).join('') : "";
-    return flag ? `${flag} ${countryName}` : countryName;
+function countryCodeToFlag(code) {
+    return [...code.toUpperCase()]
+        .map(c => String.fromCodePoint(127397 + c.charCodeAt()))
+        .join('');
 }
 
-// Select all the table rows within the specified tbody
 const rows = document.querySelectorAll('.items > tbody:nth-child(2) > tr');
 
-// Array to store the formatted data
 const players = [];
 
 rows.forEach(row => {
-    const number = row.querySelector('td.zentriert.rueckennummer.bg_Torwart > div')?.textContent.trim() ||
-                   row.querySelector('td.zentriert.rueckennummer')?.textContent.trim() || 
-                   null;
+    const number =
+        row.querySelector('td.zentriert.rueckennummer.bg_Torwart > div')?.textContent.trim() ||
+        row.querySelector('td.zentriert.rueckennummer')?.textContent.trim() ||
+        null;
 
-    const name = row.querySelector('td.posrela .hauptlink a')?.textContent.trim() || null;
-    const position = row.querySelector('td.posrela table tbody tr:nth-child(2) td')?.textContent.trim() || null;
-    const countryName = row.querySelector('td:nth-child(4) img')?.title || null;
-    const country = countryName ? getCountryFlag(countryName) : null;
-    const height = row.querySelector('td:nth-child(5)')?.textContent.trim() || null;
-    const foot = row.querySelector('td:nth-child(6)')?.textContent.trim() || null;
-    const contractStarted = row.querySelector('td:nth-child(7)')?.textContent.trim() || null;
-    const contractEnds = row.querySelector('td:nth-child(9)')?.textContent.trim() || null;
+    const name =
+        row.querySelector('td.posrela .hauptlink a')?.textContent.trim() ||
+        null;
 
-    // Extract age from parentheses
-    const ageText = row.querySelector('td:nth-child(3)')?.textContent || '';
+    const position =
+        row.querySelector('td.posrela table tbody tr:nth-child(2) td')?.textContent.trim() ||
+        null;
+
+    let country = null;
+
+    const countryImg = row.querySelector('td:nth-child(4) img');
+
+    if (countryImg) {
+        const countryName = countryImg.title?.trim();
+
+        const imageUrl =
+            countryImg.getAttribute('data-src') ||
+            countryImg.getAttribute('src') ||
+            '';
+
+        // Extract country code from URL like ".../pl.png"
+        const match = imageUrl.match(/\/([a-z]{2})\.png(?:\?|$)/i);
+
+        if (match) {
+            const code = match[1].toUpperCase();
+            const flag = countryCodeToFlag(code);
+            country = `${flag} ${countryName}`;
+        } else {
+            country = countryName;
+        }
+    }
+
+    const height =
+        row.querySelector('td:nth-child(5)')?.textContent.trim() ||
+        null;
+
+    const foot =
+        row.querySelector('td:nth-child(6)')?.textContent.trim() ||
+        null;
+
+    const contractStarted =
+        row.querySelector('td:nth-child(7)')?.textContent.trim() ||
+        null;
+
+    const contractEnds =
+        row.querySelector('td:nth-child(9)')?.textContent.trim() ||
+        null;
+
+    const ageText =
+        row.querySelector('td:nth-child(3)')?.textContent || '';
+
     const ageMatch = ageText.match(/\((\d+)\)/);
-    const age = ageMatch ? ageMatch[1] : null;
+    const age = ageMatch ? parseInt(ageMatch[1], 10) : null;
 
-    const value = row.querySelector('td.rechts.hauptlink a')?.textContent.trim() || null;
+    const value =
+        row.querySelector('td.rechts.hauptlink a')?.textContent.trim() ||
+        null;
 
-    // Get image URL with lazy-load support
-    const imgElement = row.querySelector('td.posrela > table > tbody > tr:nth-child(1) > td:nth-child(1) > img');
+    const imgElement = row.querySelector(
+        'td.posrela > table > tbody > tr:nth-child(1) > td:nth-child(1) > img'
+    );
+
     let imageUrl = null;
+
     if (imgElement) {
-        imageUrl = imgElement.getAttribute('data-src') || imgElement.getAttribute('src');
-        if (imageUrl && imageUrl.startsWith('data:image/gif')) {
-            imageUrl = null; // Ignore placeholders
+        imageUrl =
+            imgElement.getAttribute('data-src') ||
+            imgElement.getAttribute('src');
+
+        if (imageUrl?.startsWith('data:image/gif')) {
+            imageUrl = null;
         }
     }
 
@@ -88,6 +110,23 @@ rows.forEach(row => {
     });
 });
 
-// Convert the array to JSON
 const jsonResult = JSON.stringify(players, null, 2);
+
 console.log(jsonResult);
+
+const blob = new Blob([jsonResult], {
+    type: 'application/json'
+});
+
+const url = URL.createObjectURL(blob);
+
+const a = document.createElement('a');
+a.href = url;
+a.download = 'players.json';
+
+document.body.appendChild(a);
+a.click();
+
+document.body.removeChild(a);
+URL.revokeObjectURL(url);
+```
