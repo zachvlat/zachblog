@@ -38,20 +38,11 @@ mkdir -p /var/run/tailscale
 Since minimal Alpine environments often do not run an init system, start `tailscaled` manually:
 
 ```sh
-tailscaled \
-  --state=/var/lib/tailscale/tailscaled.state \
-  --socket=/var/run/tailscale/tailscaled.sock
+tailscaled --state=/var/lib/tailscale/tailscaled.state --socket=/var/run/tailscale/tailscaled.sock &
 ```
 
 The daemon should remain running in this terminal.
 
-If you want it to run in the background:
-
-```sh
-tailscaled \
-  --state=/var/lib/tailscale/tailscaled.state \
-  --socket=/var/run/tailscale/tailscaled.sock &
-```
 
 ---
 
