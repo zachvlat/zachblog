@@ -13,6 +13,12 @@ slug: "zed-settings"
     "show_user_menu": true,
     "show_menus": true
   },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 1000
+    }
+  },
   "which_key": {
     "enabled": false
   },
