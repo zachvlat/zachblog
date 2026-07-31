@@ -4,8 +4,7 @@ date: "2025-06-26"
 slug: "brave-policies"
 ---
 
-This Python script allows you to backup your Chromium/Brave browser profiles from Windows, Linux (Flatpak), or WSL.
-
+======================================
 ```bash
 #!/usr/bin/env bash
 
@@ -29,7 +28,7 @@ echo
 echo "Restart Brave completely for the policy to apply."
 echo "Verify with: brave://policy"
 ```
-
+======================================
 ```powershell
 $URL = "https://gist.githubusercontent.com/zachvlat/494da080219452bc3b5173b491011f56/raw/aa5c5ae03ccb694c901d92f308ca8a5289e04d57/slimbrave.json"
 
