@@ -7,7 +7,13 @@ slug: "alpine"
 ## If you want all
 
 ```bash
-apk add nano git curl wget openssh build-base openssl-dev pkgconfig bash flatpak flatpak-builder streamlink lazydocker docker docker-cli docker-compose python3 py3-pip nodejs npm shadow go openjdk21 yt-dlp btop newsboat yazi mpv ffmpeg lscpu
+apk add nano git curl wget openssh build-base openssl-dev pkgconfig bash flatpak flatpak-builder streamlink lazydocker docker docker-cli docker-compose python3 py3-pip nodejs npm shadow go openjdk21 yt-dlp btop newsboat yazi mpv ffmpeg lscpu alpine-sdk libstdc++ libc6-compat krb5-dev py3-setuptools
+```
+```bash
+export PYTHON=/usr/bin/python3
+npm install --global code-server --unsafe-perm
+code-server --bind-addr 0.0.0.0:8080
+cat /root/.config/code-server/config.yaml
 ```
 
 ## General
