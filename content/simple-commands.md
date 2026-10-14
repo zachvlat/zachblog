@@ -39,3 +39,8 @@ check-updates;
 tailscale funnel --bg 8096
 tailscale funnel reset
 ```
+
+### Push projects on all platforms on docker hub
+```bash
+docker buildx create --name multiarch --use --bootstrap 2>/dev/null || docker buildx use multiarch; docker buildx build --platform linux/amd64,linux/arm64 -t zatsando/twitchsen:1.5.1 -t zatsando/twitchsen:latest --push .
+```
